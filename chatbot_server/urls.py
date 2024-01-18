@@ -21,5 +21,5 @@ from app.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', UserView.as_view(), name='anything'),
+    path('user/', include('app.urls')),
 ]
