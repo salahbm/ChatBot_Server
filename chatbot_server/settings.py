@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-p40mrdn&qxw7_spkhrb-eo3^0e^4vow=dv_(a7y!#1)w-u30hu'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://chatbot-server-d493.onrender.com','127.0.0.1']
 
 
 # Application definition
