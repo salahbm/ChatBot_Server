@@ -7,9 +7,9 @@ name = "pypi"
 djangorestframework = "*"
 django-cors-headers = "*"
 python-decouple = "*"
-pymongo = "==3.12.1"
 bcrypt = "*"
 djongo = "*"
+pymongo = {extras = ["srv"], version = "*"}
 
 [dev-packages]
 djongo = "*"
