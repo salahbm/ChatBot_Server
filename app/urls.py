@@ -1,10 +1,9 @@
 from django.urls import path
-from . import views
+from app.views import UserAPIView , index
 
 # Init
 
 urlpatterns = [
-    path('', views.index),
-    path('storeUser/', views.store_user, name='store_user'),
-    path('getUserById/', views.get_user_by_id)
+    path('', index, name='index'),
+    path('UserAPIView/',UserAPIView.as_view(),name='user_api_view'),
 ]

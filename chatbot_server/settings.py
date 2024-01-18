@@ -59,6 +59,9 @@ MIDDLEWARE = [
 REST_FRAMEWORK = {'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permissions.AllowAny']}
 # Allow all CORS requests: To use backend side from React-Framework with different origins
 CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000", 
+]
 
 ROOT_URLCONF = 'chatbot_server.urls'
 
@@ -83,13 +86,30 @@ WSGI_APPLICATION = 'chatbot_server.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'djongo',
+        'ENFORCE_SCHEMA': True,
+        'NAME': 'chatbot',
+        'CLIENT': {
+            'host': config('DJANGO_DB_HOST'),
+            'port': 27017,
+            'username': config('DJANGO_DB_USER'),
+            'password': config('DJANGO_DB_PASSWORD'),
+            'authSource': 'admin',
+            'authMechanism': 'SCRAM-SHA-1',
+        }
+    }
+}
+
+
+
 # DATABASES = {
-#     'default': {
-#         'ENGINE': config('DJANGO_DB_ENGINE', default='djongo'),
-#         'NAME': config('DJANGO_DB_NAME', default='ai-web'),
-#         'HOST': config('DJANGO_DB_HOST', default=''),
-#         'USER': config('DJANGO_DB_USER', default=''),
-#         'PASSWORD': config('DJANGO_DB_PASSWORD', default=''),
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": BASE_DIR / "db.sqlite3",
 #     }
 # }
 

@@ -7,10 +7,12 @@ name = "pypi"
 djangorestframework = "*"
 django-cors-headers = "*"
 python-decouple = "*"
-pymongo = "*"
+pymongo = "==3.12.1"
 bcrypt = "*"
+djongo = "*"
 
 [dev-packages]
+djongo = "*"
 
 [requires]
 python_version = "3.11"

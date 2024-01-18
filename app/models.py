@@ -6,5 +6,9 @@ from db_connection import db
 
 user_collection = db['Users']
 class User(models.Model):
-    username = models.CharField(max_length=255)
-    password = models.CharField(max_length=255)
+    name = models.CharField(max_length=255)
+    email = models.CharField(max_length=255)
+    phone=models.CharField(max_length=255)
+    marketingRequirement=models.CharField(max_length=255)
+    desiredService=models.CharField(max_length=255)
+    salesDepAgreement=models.CharField(max_length=255)
