@@ -8,6 +8,7 @@ djangorestframework = "*"
 django-cors-headers = "*"
 python-decouple = "*"
 pymongo = "*"
+bcrypt = "*"
 
 [dev-packages]
 
