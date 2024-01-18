@@ -9,7 +9,7 @@ django-cors-headers = "*"
 python-decouple = "*"
 bcrypt = "*"
 djongo = "*"
-pymongo = {extras = ["srv"], version = "*"}
+pymongo = "==3.12.1"
 
 [dev-packages]
 djongo = "*"
