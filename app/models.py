@@ -14,14 +14,14 @@ class User(models.Model):
     salesDepAgreement=models.CharField(max_length=255)
 
 
-chatbot_collection = db['Chatbot']
-class ChatbotStep(models.Model):
+chatbot_collection = db['Chatbots']
+class ChatbotSteps(models.Model):
     id = models.CharField(max_length=255, primary_key=True)
-    message = models.TextField()
-    user = models.BooleanField(default=False)
-    trigger = models.CharField(max_length=255)
-    validator = models.TextField(blank=True, null=True)
+    message = models.TextField( null=True)
+    user = models.BooleanField(default=False, null=True)
+    trigger = models.CharField(max_length=255, null=True)
+    validator = models.BooleanField(default=False, null=True)
     options = models.JSONField(blank=True, null=True)
-    end = models.BooleanField(default=False)
+    end = models.BooleanField(default=False, null=True)
 
 

@@ -10,5 +10,5 @@ class UserSerializer(serializers.ModelSerializer):
 
 class ChatbotStepSerializer(serializers.ModelSerializer):
     class Meta:
-        model = ChatbotStep
+        model = ChatbotSteps
         fields = '__all__'
