@@ -6,3 +6,9 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ( 'name', 'email', 'phone','marketingRequirement', 'desiredService','salesDepAgreement')
+
+
+class ChatbotStepSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ChatbotStep
+        fields = '__all__'
