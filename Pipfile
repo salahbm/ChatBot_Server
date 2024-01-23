@@ -9,8 +9,8 @@ django-cors-headers = "*"
 python-decouple = "*"
 bcrypt = "*"
 djongo = "*"
-pymongo = "==3.12.1"
 gunicorn = "*"
+pymongo = {extras = ["srv"], version = "*"}
 
 [dev-packages]
 djongo = "*"
