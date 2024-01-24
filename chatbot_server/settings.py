@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 from decouple import config
+import os
 import mimetypes
 mimetypes.add_type("text/css", ".css", True)
 
@@ -29,7 +30,7 @@ SECRET_KEY = 'django-insecure-p40mrdn&qxw7_spkhrb-eo3^0e^4vow=dv_(a7y!#1)w-u30hu
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [ "https://chatbot-server-yfs1.onrender.com", '127.0.0.1', 'localhost','.onrender.com']
+ALLOWED_HOSTS = [ 'https://chatbot-server-yfs1.onrender.com', '127.0.0.1', 'localhost','.onrender.com', '*']
 
 
 # Application definition
@@ -55,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 
@@ -153,8 +155,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 # settings.py
 
-STATIC_ROOT = "/var/www/chatbot-server-yfs1.onrender.com/static/"
-STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/assets/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'assets'), ]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
