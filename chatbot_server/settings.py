@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-p40mrdn&qxw7_spkhrb-eo3^0e^4vow=dv_(a7y!#1)w-u30hu
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [ 'https://chatbot-server-yfs1.onrender.com', '127.0.0.1', 'localhost','.onrender.com', '*']
+ALLOWED_HOSTS = [ '*']
 
 
 # Application definition
@@ -56,7 +56,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.common.CommonMiddleware',
 ]
 
 
@@ -64,10 +63,7 @@ MIDDLEWARE = [
 REST_FRAMEWORK = {'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permissions.AllowAny']}
 # Allow all CORS requests: To use backend side from React-Framework with different origins
 CORS_ORIGIN_ALLOW_ALL = True
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000", 
- "https://chatbot-server-yfs1.onrender.com"
-]
+CORS_ALLOWED_ORIGINS = ["http://localhost:3000", "https://chatbot-server-yfs1.onrender.com"]
 
 ROOT_URLCONF = 'chatbot_server.urls'
 
