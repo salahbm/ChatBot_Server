@@ -10,7 +10,7 @@ python-decouple = "*"
 bcrypt = "*"
 djongo = "*"
 gunicorn = "*"
-pymongo = {extras = ["srv"], version = "*"}
+pymongo = "==3.12.3"
 
 [dev-packages]
 djongo = "*"
