@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
-from decouple import config
+# from decouple import config
 import os
 import mimetypes
 mimetypes.add_type("text/css", ".css", True)
@@ -90,16 +90,31 @@ WSGI_APPLICATION = 'chatbot_server.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'djongo',
+#         'ENFORCE_SCHEMA': True,
+#         'NAME': 'chatbot',
+#         'CLIENT': {
+#             'host': config('DJANGO_DB_HOST'),
+#             'port': 27017,
+#             'username': config('DJANGO_DB_USER'),
+#             'password': config('DJANGO_DB_PASSWORD'),
+#             'authSource': 'admin',
+#             'authMechanism': 'SCRAM-SHA-1',
+#         }
+#     }
+# }
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
         'ENFORCE_SCHEMA': True,
         'NAME': 'chatbot',
         'CLIENT': {
-            'host': config('DJANGO_DB_HOST'),
+            'host':'mongodb+srv://salahbm:Bahmuhsal2001@web-ai.qxrtmxa.mongodb.net/?retryWrites=true&w=majority',
             'port': 27017,
-            'username': config('DJANGO_DB_USER'),
-            'password': config('DJANGO_DB_PASSWORD'),
+            'username': 'salahbm',
+            'password': 'Bahmuhsal2001',
             'authSource': 'admin',
             'authMechanism': 'SCRAM-SHA-1',
         }

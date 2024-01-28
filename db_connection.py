@@ -1,10 +1,9 @@
 import pymongo
-from decouple import config
 
 
 
 try:
-    client = pymongo.MongoClient(config('DJANGO_DB_HOST'))
+    client = pymongo.MongoClient('mongodb+srv://salahbm:Bahmuhsal2001@web-ai.qxrtmxa.mongodb.net/?retryWrites=true&w=majority')
     db = client['web-ai']
     print("Connected to MongoDB Atlas")
 except pymongo.errors.ConnectionFailure as e:
